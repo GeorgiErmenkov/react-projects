@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  background: gray;
+}
+
+body {
+  margin: 0;
+}
+
+/* div {
+  border: lightcoral;
+  background: lightseagreen;
+  border-radius: 2rem;
+  width: 100%;
+  align-items: center;
+  height: 100px;
+
+} */
