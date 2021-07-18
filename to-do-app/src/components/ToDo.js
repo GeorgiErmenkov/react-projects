@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
 
 const ToDo = ({ text }) => {
+    const [ modalIsOpen, setModalIsOpen ] = useState(false);
+    
     const deleteHandler = () => {
-            
-    }
+       setModalIsOpen(true);     
+    };
+
+    const closeModalHandler = () => {
+        setModalIsOpen(false);
+    };
 
     return (
         <div className='card'>
@@ -11,6 +19,8 @@ const ToDo = ({ text }) => {
             <div className='actions'>
                 <button className='btn' onClick={deleteHandler}>Delete</button>
             </div>
+            { modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler}/> }
+            { modalIsOpen && <Backdrop onCancel={closeModalHandler}/>}
         </div>
     )
 }
